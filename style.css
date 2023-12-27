@@ -17,8 +17,8 @@ body    {
 
 @property --a
 {
-    syntax: '<angel>';
-    inherit: false;
+    syntax: '<angle>';
+    inherits: false;
     initial-value: 0deg;
 }
 
@@ -29,7 +29,7 @@ body    {
     background: repeating-conic-gradient(from var(--a), #ff2770 0%,#ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
     filter: drop-shadow(0 15px 50px #000);
     border-radius: 20px;
-    animation: rotating 4s linear infinite;
+    animation: rotating 3s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
