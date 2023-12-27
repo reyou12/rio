@@ -33,15 +33,153 @@ body    {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
+}
+
+.box:hover
+{
+    width: 450px;
+    height: 500px;
 }
 
 @keyframes rotating
 {
-    0% {
+    0% 
+    {
         --a: 0deg;
     }
 
-    100% {
+    100% 
+    {
         --a: 360deg;
     }
+}
+
+.box::before    {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), #45f3ff 0%,#45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    animation-delay: -1s;
+  
+}
+
+.box::after
+{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #25252b;
+    border-radius: 15px;
+    border: 8px solid #25252b;
+}  
+
+.login
+{
+    position: absolute;
+    inset: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    box-shadow: inset 10 px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    color: #fff;
+    overflow: hidden;
+}
+
+.box:hover .login
+{
+    inset: 40px;
+}
+
+.loginBx
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width:  70%;
+        transition: 0.5s;
+        transform: translateY(125px);
+    }
+
+.box:hover .loginBx
+{
+    transform: translateY(0px);
+
+}    
+.loginBx h2
+{   
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+}
+ 
+.loginBx h2 i
+{
+    color: #ff2770;
+    text-shadow: 0 0 5px #ff2770, 0 0 20px #ff2770;
+}
+
+.loginBx input
+{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid #fff;
+    border-radius: 25px;
+}
+
+.loginBx input::placeholder
+{
+    color: #999;
+}
+
+.loginBx input[type="submit"]
+{
+    background: #45f3ff;
+    border: none;
+    font-weight: 500;
+    color: #111;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.loginBx input[type="submit"]:hover
+{
+    box-shadow: 0 0 5px #45f3ff, 0 0 20px #45f3ff;
+}
+
+.group
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.group a
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.group a:nth-child(2)
+{
+    color: #ff2770;
+    font-weight: 600;
 }
